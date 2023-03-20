@@ -13,21 +13,24 @@
  *     }
  * }
  */
-class Solution {
-    public void flatten(TreeNode root) {
-        flattenHelper(root, null);
-    }
-
-    private TreeNode flattenHelper(TreeNode root, TreeNode prev) {
-        if (root == null) {
-            return prev;
-        }
-
-        prev = flattenHelper(root.right, prev);
-        prev = flattenHelper(root.left, prev);
-        root.right = prev;
-        root.left = null;
-        prev = root;
-        return prev;
+public class Solution {
+  static TreeNode prev = null;
+    static void flatten(TreeNode root) {
+        TreeNode cur = root;
+		while (cur!=null)
+		{
+			if(cur.left!=null)
+			{
+				TreeNode pre = cur.left;
+				while(pre.right!=null)
+				{
+					pre = pre.right;
+				}
+				pre.right = cur.right;
+				cur.right = cur.left;
+				cur.left = null;
+			}
+			cur = cur.right;
+		}
     }
 }
