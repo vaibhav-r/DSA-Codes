@@ -1,25 +1,36 @@
 class MedianFinder {
-    List<Integer> list; 
+    private PriorityQueue<Integer> maxHeap; // stores the smaller half of the numbers
+    private PriorityQueue<Integer> minHeap; // stores the larger half of the numbers
+
     public MedianFinder() {
-        this.list = new ArrayList<Integer>();
+        maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+        minHeap = new PriorityQueue<>();
     }
-    
+
     public void addNum(int num) {
-        if(list.size() == 0) list.add(0, num);  
-        else{
-            int i=0;
-            while(list.get(i) <= num && i<list.size()-1) i++;
-            //*****The reason why I didn't traversed till the last index was to escape from IndexOutOfBounds Error*****
-            if(list.get(i) <= num) list.add(i+1, num);
-            else list.add(i, num);
+        // add the number to the appropriate heap
+        if (maxHeap.isEmpty() || num <= maxHeap.peek()) {
+            maxHeap.offer(num);
+        } else {
+            minHeap.offer(num);
+        }
+        
+        // balance the two heaps
+        if (maxHeap.size() > minHeap.size() + 1) {
+            minHeap.offer(maxHeap.poll());
+        } else if (minHeap.size() > maxHeap.size() + 1) {
+            maxHeap.offer(minHeap.poll());
         }
     }
-    
+
     public double findMedian() {
-        int n = list.size();
-        if(n == 0) return 0;
-        if(n%2 == 1) return list.get(n/2);
-        return (double)((list.get(n/2) + list.get(n/2 - 1)))/2;
+        if (maxHeap.size() == minHeap.size()) {
+            return (maxHeap.peek() + minHeap.peek()) / 2.0;
+        } else if (maxHeap.size() > minHeap.size()) {
+            return maxHeap.peek();
+        } else {
+            return minHeap.peek();
+        }
     }
 }
 
