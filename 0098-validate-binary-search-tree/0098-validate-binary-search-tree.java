@@ -21,9 +21,6 @@ class Solution {
         if(node == null) return true; 
         if(node.val <= min || node.val >= max) return false; 
         
-        if(checkBST(node.left, min, node.val) && checkBST(node.right, node.val, max)) {
-            return true; 
-        }
-        return false; 
+        return checkBST(node.left, min, node.val) && checkBST(node.right, node.val, max);
     }
 }
