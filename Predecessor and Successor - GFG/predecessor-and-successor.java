@@ -131,11 +131,11 @@ class GfG
         } 
        while (root != null) {
             
-            if (key > root.data) {
+            if (key <= root.data) {
+                root = root.left;
+            } else {
                 p.pre=root;
                 root = root.right;
-            } else {
-                root = root.left;
             }
         }
     }
