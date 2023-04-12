@@ -1,12 +1,15 @@
 class Solution {
     public int singleNonDuplicate(int[] nums) {
-        HashSet<Integer> h=new HashSet<>();
-        for(int i=0;i<nums.length;i++){
-            if(h.contains(nums[i])){
-                h.remove(nums[i]);
+        int low=0,high=nums.length-2;
+        while(low<=high){
+            int mid=(low+high)>>1;
+            if(nums[mid]==nums[mid^1]){
+                low=mid+1;
             }
-            else h.add(nums[i]);
+            else{
+                high=mid-1;
+            }
         }
-        return h.iterator().next();
+        return nums[low];
     }
 }
