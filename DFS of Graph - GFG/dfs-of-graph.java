@@ -43,7 +43,7 @@ class Solution {
         return ls; 
         
     }
-    public void dfs(int node, boolean vis[], ArrayList<ArrayList<Integer>> adj, 
+    public void dfs(int node, boolean[] vis, ArrayList<ArrayList<Integer>> adj, 
     ArrayList<Integer> ls) {
         
         //marking current node as visited
@@ -51,7 +51,7 @@ class Solution {
         ls.add(node);
         
         //getting neighbour nodes
-        for(Integer it: adj.get(node)) {
+        for(int it: adj.get(node)) {
             if(vis[it] == false) {
                 dfs(it, vis, adj, ls);
             }
