@@ -1,9 +1,10 @@
 class Solution {
     public char nextGreatestLetter(char[] letters, char target) {
-        char a=letters[0];
-        for(char s: letters){
-            if(s>target) return s;
+        for (char letter : letters) {
+            if (letter > target) {
+                return letter;
+            }
         }
-        return a;
+        return letters[0];
     }
 }
