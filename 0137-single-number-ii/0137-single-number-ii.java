@@ -1,12 +1,10 @@
 class Solution {
     public int singleNumber(int[] nums) {
-        Map<Integer, Integer> mp=new HashMap<>();
-        for(int i: nums){
-            mp.put(i,mp.getOrDefault(i,0)+1);
+        Arrays.sort(nums);
+        if(nums.length==1 || nums[0]!=nums[1]) return nums[0];
+        for(int i=1;i<nums.length-1;i++){
+            if(nums[i-1]!=nums[i] && nums[i]!=nums[i+1]) return nums[i];
         }
-        for(int i:nums){
-            if(mp.get(i)==1) return i;
-        }
-        return -1;
+        return nums[nums.length-1];
     }
 }
