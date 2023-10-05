@@ -4,7 +4,7 @@ class Solution {
         for(char it: s.toCharArray()){
             if(it=='('||it=='['||it=='{')
                 st.push(it);
-            else{
+            else {
                 if(st.size()==0) return false;
                 char ch=st.pop();
                 if((ch=='(' && it==')')||(ch=='{' && it=='}')||(ch=='[' && it==']')) continue;
