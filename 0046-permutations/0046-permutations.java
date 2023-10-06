@@ -1,7 +1,7 @@
 class Solution {
     public List<List<Integer>> permute(int[] nums){
         List<List<Integer>> ans= new ArrayList<>();
-        funcPermu(0,nums,ans);
+        funcPermu(0,nums,ans); 
         return ans;
     }
     public void funcPermu(int ind,int[] nums,List<List<Integer>> ans){
