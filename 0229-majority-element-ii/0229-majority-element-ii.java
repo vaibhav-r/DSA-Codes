@@ -1,6 +1,5 @@
 class Solution {
     public List<Integer> majorityElement(int[] nums) {
-        List<Integer> ans=new ArrayList<>();
         int cnt1=0,cnt2=0,nums1=-1,nums2=-1;
         for(int i:nums){
             if(nums1==i) cnt1++;
@@ -18,8 +17,8 @@ class Solution {
                 cnt2--;
             } 
         }
-        cnt1=0;
-        cnt2=0;
+        List<Integer> ans=new ArrayList<>();
+        cnt1=cnt2=0;
         for(int i:nums){
             if(i==nums1) cnt1++;
             else if(i==nums2) cnt2++;
