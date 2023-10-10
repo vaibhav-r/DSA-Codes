@@ -11,7 +11,7 @@ class Solution {
             map.put(s.charAt(right),right);
             len=Math.max(len,right-left+1);
             right++;
-        }
+        } 
         return len;
     }
 }
