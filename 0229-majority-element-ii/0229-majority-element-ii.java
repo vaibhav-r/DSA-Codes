@@ -1,4 +1,4 @@
-class Solution {
+class Solution { 
     public List<Integer> majorityElement(int[] nums) {
         int cnt1=0,cnt2=0,nums1=-1,nums2=-1;
         for(int i:nums){
