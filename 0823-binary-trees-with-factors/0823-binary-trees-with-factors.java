@@ -1,6 +1,6 @@
 class Solution {
     public int numFactoredBinaryTrees(int[] arr) {
-        int MOD = 1_000_000_007;
+        int MOD = 1_000_000_007; 
         Arrays.sort(arr);
         long[] dp = new long[arr.length];
         Arrays.fill(dp, 1);
