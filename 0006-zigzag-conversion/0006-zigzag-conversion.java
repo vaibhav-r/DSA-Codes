@@ -26,7 +26,6 @@ class Solution {
                 index += charsInSection;
             }
         }
-        
         return answer.toString();
     }
 }
