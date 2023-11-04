@@ -7,6 +7,6 @@ class Solution {
                 i++;
             }
         }
-        return i;
+        return i; 
     }
 }
