@@ -7,7 +7,7 @@ class SeatManager {
         for (int i = 1; i <= n; i++) {
             availableSeats.offer(i);
         }
-    }
+    } 
 
     public int reserve() {
         if (!availableSeats.isEmpty()) {
