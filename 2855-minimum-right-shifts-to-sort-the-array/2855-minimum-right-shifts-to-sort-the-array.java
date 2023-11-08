@@ -8,7 +8,6 @@ class Solution {
         ++count;
         pivot = i;
       }
-
     if (count == 0)
       return 0;
     if (count > 1 || nums.get(nums.size() - 1) > nums.get(0))
