@@ -5,7 +5,8 @@ class Solution {
         int max=0,hi=nums.length-1,lo=0;
         while(hi>lo){
             int sum=nums[hi]+nums[lo];
-            max= Math.max(sum,max);
+            max=max<sum ? sum : max;
+            //max= Math.max(sum,max);
             hi--;
             lo++;
         }
