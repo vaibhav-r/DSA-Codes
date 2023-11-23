@@ -25,7 +25,7 @@ class Solution {
         for (int num : ans) {
             result[i] = num;
             i++;
-        }
+        } 
         
         return result;
     }
