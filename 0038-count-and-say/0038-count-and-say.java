@@ -11,7 +11,7 @@ class Solution {
                 sb.append(count).append(c);
                 c = prev.charAt(i);
                 count = 1;
-            }
+            } 
         }
         sb.append(count).append(c);
         return sb.toString();
