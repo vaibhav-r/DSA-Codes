@@ -1,4 +1,4 @@
-class Solution {
+class Solution { 
     public String mostCommonWord(String paragraph, String[] banned) {
                 paragraph = paragraph.toLowerCase().replaceAll("[^a-z]", " ");
 
