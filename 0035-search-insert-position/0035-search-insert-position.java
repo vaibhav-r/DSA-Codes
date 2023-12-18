@@ -1,4 +1,4 @@
-class Solution {
+class Solution { 
     public int searchInsert(int[] nums, int target) {
         int n=nums.length;
         int lo=0,hi=n-1;
