@@ -23,7 +23,6 @@ class Solution {
         
         return result;
     }
-    
     private int countSoldiers(int[] row) {
         int left = 0;
         int right = row.length - 1;
