@@ -3,7 +3,7 @@ class Solution {
         if (numRows == 1) {
             return s;
         }
-        
+    
         StringBuilder answer = new StringBuilder();
         int n = s.length();
         int charsInSection = 2 * (numRows - 1);
